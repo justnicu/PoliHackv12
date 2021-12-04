@@ -1,16 +1,14 @@
 .login-form {
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 150px;
     gap: 20px;
     padding-top: 10%;
     padding-left: 40%;
 }
 
-.email-input, .pass-input {
+.email-input, .pass-input, .name-input, .address-input {
     border: none;
-    font-size: x;
-    width: 100%;
     border-bottom: 1px solid #000000;
 }
 
@@ -18,7 +16,6 @@
     background-color: #47746c;
     border: 1px solid black;
     color: white;
-    font-size: x;
     border-radius: 5px;
     padding: 5px;
 }
