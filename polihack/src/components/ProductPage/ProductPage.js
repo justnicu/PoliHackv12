@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import CityBox from "../city/city";
 import './ProductPage.css'
 import { Link } from 'react-router-dom';
@@ -7,7 +7,7 @@ import ClujPage from "../cities/Cluj/cluj";
 const ClujPath = "./cityImg/Cluj.jpg"
 const BucharestPath = "./cityImg/Bucharest.jpg"
 
-export default function ProductPage(){
+export default function ProductPage() {
     return (
         <div className="float-container">
             <div className="float-child">
@@ -24,10 +24,6 @@ export default function ProductPage(){
                         <CityBox name={"Bucuresti"} imgPath={BucharestPath}/>
                     </Link>  
                 </div>
-
-            </div>
-
-
-        </div>
-    )
+             </div>
+        </div>);
 }

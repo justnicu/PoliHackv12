@@ -1,30 +1,46 @@
-.rounded-box:hover {
-  border: 10px solid #84dccf36;
-}
-
 
 .rounded-box {
-  display: grid;
-  grid-template-areas: "img img"
-  "name rating";
-  grid-template-rows: 8fr 2fr;
-  border-radius: 20px;
   width: 400px;
   height: 300px;
-  border: 10px solid #84dccf00;
+  margin: 3vh;
+  display: flex;
+  flex-direction: column;
 }
 
-img {
-  border-radius: 10px;
-  grid-area: img;
+.img-container {
+  overflow: hidden;
+  height: 80%;
+  width: 100%;
+}
+
+.flex-container-company-box {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.company-img {
+  width: 100%;
+  height: 100%;
+  transition: ease-in-out 0.1s;
 }
 
 .company-name {
-  font-size: x-large;
-  grid-area: name;
+  margin-bottom: 10px;
+  margin-left: 20px;
+
+  color: black;
+  font-size: 20px;
 }
 
 .company-rating {
-  font-size: x-large;
-  grid-area: rating;
+  font-size: 15px;
+  color: black;
+}
+
+.company-img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
