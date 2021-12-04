@@ -12,6 +12,7 @@ import ProductPage from './components/ProductPage/ProductPage';
 
 const imgPath = "/cityImg/pizza.jpg"
 
+
 function App() {
   return (
     <div className="App">

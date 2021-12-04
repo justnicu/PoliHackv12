@@ -1,33 +1,21 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import CityBox from "../city/city";
 import './ProductPage.css'
 
-const ClujPath = "./cityImg/Cluj.jpg"
-const BucharestPath = "./cityImg/Bucharest.jpg"
-const IasiPath = "./cityImg/Iasi.jpg"
-const TimisoaraPath = "./cityImg/Timisoara.jpg"
-
 export default function ProductPage(){
+    const [cityList, setCityList] = useState([])
+
+    useEffect(()=> {
+        fetch('http://localhost:8000/api/cities/')
+        .then(response => response.json())
+        .then(data => setCityList([...data]))
+    }, [])
+
     return (
-        <div className="float-container">
-            <div className="float-child">
-                <div className = "leftProduct">
-                    <CityBox name={"Cluj"} imgPath={ClujPath}/>
-                </div>
-                <div className = "rightProduct">
-                    <CityBox name={"Bucuresti"} imgPath={BucharestPath}/>
-                </div>
-            </div>
-            <div className="float-name">
-                <div className = "leftProduct">
-                    <CityBox name={"Iasi"} imgPath={IasiPath}/>
-                </div>
-                <div className = "rightProduct">
-                    <CityBox name={"Timisoara"} imgPath={TimisoaraPath}/>
-                </div>
-            </div>
-
-
-        </div>
+       <div className="cities-div">
+           {cityList.map((city, idx) =>
+             <CityBox name={city.name} imgPath={city.city_img} key={idx}/>
+           )}
+       </div>
     )
 }

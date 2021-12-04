@@ -14,7 +14,7 @@
   border: 10px solid #84dccf00;
 }
 
-img {
+.company-img {
   border-radius: 10px;
   grid-area: img;
 }
