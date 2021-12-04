@@ -12,7 +12,8 @@ class City(models.Model):
 class Company(models.Model):
     name = models.CharField(max_length=40)
     address = models.TextField()
-    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="companyOf")
+    rating = models.IntegerField()
     company_img = models.ImageField(upload_to='images/companies', default='/home/nicu/Desktop/PoliHackv12/polihack/public/cityImg/pizza.jpg')
 
     def _str_(self):
@@ -22,7 +23,7 @@ class Product(models.Model):
     name = models.CharField(max_length=20)
     description = models.TextField()
     quantity = models.IntegerField()
-    company = models.ForeignKey(Company, on_delete=models.CASCADE)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name="productOf")
 
     def _str_(self):
         return self.name

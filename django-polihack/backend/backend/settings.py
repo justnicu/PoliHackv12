@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'shop',
     'corsheaders',
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +137,4 @@ CORS_ORIGIN_WHITELIST = [
 
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+

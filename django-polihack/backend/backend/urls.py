@@ -32,6 +32,7 @@ urlpatterns = [
     path('api/', include(routerCity.urls)),
     path('api/', include(routerCompany.urls)),
     path('api/', include(routerProduct.urls)),
+    path('rest-auth/', include('rest_auth.urls')),
 ]
 
 if settings.DEBUG:

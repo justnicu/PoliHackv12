@@ -7,10 +7,10 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ('name', 'description', 'quantity', 'company')
 
 class CompanyAdmin(admin.ModelAdmin):
-    list_display = ('name', 'address', 'city')
+    list_display = ('name', 'address', 'city', 'rating', 'company_img')
 
 class CityAdmin(admin.ModelAdmin):
-    list_display = ('name', 'name')
+    list_display = ('name', 'city_img')
 
 # Register your models here.
 

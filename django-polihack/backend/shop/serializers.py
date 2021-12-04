@@ -6,14 +6,17 @@ from .models import Product
 class CitySerializer(serializers.ModelSerializer):
     class Meta:
         model = City
-        fields = ('name', 'city_img')
+        id = serializers.ReadOnlyField()
+        fields = ('name', 'city_img', 'id')
 
 class CompanySerializer(serializers.ModelSerializer):
     class Meta:
         model = Company
-        fields = ('name', 'address', 'city', 'company_img')
+        id = serializers.ReadOnlyField()
+        fields = ('name', 'address', 'city', 'rating', 'company_img', 'id')
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = ('name', 'description', 'quantity', 'company')
+
