@@ -12,10 +12,10 @@ const NavBar=() => {
         <nav>
             <div className="navbar-elements">
                 <div className="navbar-left">
-                    <div className="logo-div"><p>LOGO</p></div>
+                    <div className="logo-div"><p>SiPlasPlas</p></div>
 
                     <Link to = "/home" onClick={()=> setActiveButton(0)} className={activeButton === 0 ? "nav-element-active" : ""}>Home</Link>
-                    <Link to="/product" onClick={()=> setActiveButton(1)} className={activeButton === 1 ? "nav-element-active" : ""}>Products</Link>
+                    <Link to="/products" onClick={()=> setActiveButton(1)} className={activeButton === 1 ? "nav-element-active" : ""}>Products</Link>
                 </div>
                 <div className="navbar-right">
                     <Link to="/login" onClick={()=> setActiveButton(2)} className={activeButton === 2 ? "nav-element-active" : ""}>Login</Link>

@@ -2,28 +2,27 @@ import React, {useState, useEffect} from "react";
 import CityBox from "../city/city";
 import './ProductPage.css'
 import { Link } from 'react-router-dom';
-import ClujPage from "../cities/Cluj/cluj";
+import { BrowserRouter, Route, Routes, Outlet } from 'react-router-dom';
+import CityPage from "../CityPage/CityPage";
 
-const ClujPath = "./cityImg/Cluj.jpg"
-const BucharestPath = "./cityImg/Bucharest.jpg"
+export default function ProductPage({cityId}) {
+    const [citiesList, setCitiesList] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:8000/api/cities/')
+        .then(response => response.json())
+        .then(data=> setCitiesList(data))
+        .catch(err => console.log(err))
+    }, [])
 
-export default function ProductPage() {
     return (
-        <div className="float-container">
-            <div className="float-child">
-                <div className = "leftProduct">
-                    <Link to="cluj">
-                        <CityBox name={"Cluj"} imgPath={ClujPath}/>
-                    </Link>  
-                </div>
-
+        <div className="products-page">
+            {citiesList.map((city, idx) => 
+                <div key={idx}>
+            <Link to={city.name}>
+                <CityBox name={city.name} id={city.id} imgPath={city.city_img} />
+            </Link>
+            <Outlet/>
             </div>
-            <div className="float-name">
-                <div className = "rightProduct">
-                    <Link to="bucuresti">
-                        <CityBox name={"Bucuresti"} imgPath={BucharestPath}/>
-                    </Link>  
-                </div>
-             </div>
+            )}
         </div>);
 }
