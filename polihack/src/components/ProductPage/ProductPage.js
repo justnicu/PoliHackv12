@@ -1,21 +1,29 @@
 import React, {useState, useEffect} from "react";
 import CityBox from "../city/city";
 import './ProductPage.css'
+import { Link } from 'react-router-dom';
+import ClujPage from "../cities/Cluj/cluj";
 
-export default function ProductPage(){
-    const [cityList, setCityList] = useState([])
+const ClujPath = "./cityImg/Cluj.jpg"
+const BucharestPath = "./cityImg/Bucharest.jpg"
 
-    useEffect(()=> {
-        fetch('http://localhost:8000/api/cities/')
-        .then(response => response.json())
-        .then(data => setCityList([...data]))
-    }, [])
-
+export default function ProductPage() {
     return (
-       <div className="cities-div">
-           {cityList.map((city, idx) =>
-             <CityBox name={city.name} imgPath={city.city_img} key={idx}/>
-           )}
-       </div>
-    )
+        <div className="float-container">
+            <div className="float-child">
+                <div className = "leftProduct">
+                    <Link to="cluj">
+                        <CityBox name={"Cluj"} imgPath={ClujPath}/>
+                    </Link>  
+                </div>
+
+            </div>
+            <div className="float-name">
+                <div className = "rightProduct">
+                    <Link to="bucuresti">
+                        <CityBox name={"Bucuresti"} imgPath={BucharestPath}/>
+                    </Link>  
+                </div>
+             </div>
+        </div>);
 }
