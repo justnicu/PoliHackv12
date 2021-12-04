@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 import "./navbar.css"
+import HomePage from '../HomePage/HomePage';
+import LoginPage from '../LoginPage/LoginPage';
+import ProductPage from '../ProductPage/ProductPage';
+import { LinkContainer } from "react-router-bootstrap";
+import { Link } from 'react-router-dom';
 
-export default function NavBar(){
+const NavBar=() => {
     const [activeButton, setActiveButton] = useState(0);
 
     return (
@@ -9,15 +14,18 @@ export default function NavBar(){
             <div className="navbar-elements">
                 <div className="navbar-left">
                     <div className="logo-div"><p>LOGO</p></div>
-                    <a href="#home" onClick={()=> setActiveButton(0)} className={activeButton == 0 ? "nav-element-active" : ""}>Home</a>
-                    <a href="#products" onClick={()=> setActiveButton(1)} className={activeButton == 1 ? "nav-element-active" : ""}>Products</a>
+
+                    <Link to = "/home" onClick={()=> setActiveButton(0)} className={activeButton == 0 ? "nav-element-active" : ""}>Home</Link>
+                    <Link to="/product" onClick={()=> setActiveButton(1)} className={activeButton == 1 ? "nav-element-active" : ""}>Products</Link>
                 </div>
                 <div className="navbar-right">
-                    <a href="#login" onClick={()=> setActiveButton(2)} className={activeButton == 2 ? "nav-element-active" : ""}>Login</a>
-                    <a href="#register" onClick={()=> setActiveButton(3)} className={activeButton == 3 ? "nav-element-active" : ""}>Register</a>
+                    <Link to="/login" onClick={()=> setActiveButton(2)} className={activeButton == 2 ? "nav-element-active" : ""}>Login</Link>
+                    <Link to="/register" onClick={()=> setActiveButton(3)} className={activeButton == 3 ? "nav-element-active" : ""}>Register</Link>
                 </div>
             </div>
             
         </nav>
     )
 }
+
+export default NavBar
