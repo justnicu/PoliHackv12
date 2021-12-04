@@ -11,6 +11,6 @@
 
 @media screen and(max-width: 600px) {
     .float-child{
-        border: 310px solid green;
+        width: 100%;
     }
 }

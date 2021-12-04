@@ -3,7 +3,7 @@ import "./navbar.css"
 import HomePage from '../HomePage/HomePage';
 import LoginPage from '../LoginPage/LoginPage';
 import ProductPage from '../ProductPage/ProductPage';
-import { LinkContainer } from "react-router-bootstrap";
+
 import { Link } from 'react-router-dom';
 
 const NavBar=() => {
