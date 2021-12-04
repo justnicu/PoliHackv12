@@ -1,0 +1,19 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    gap: 20px;
+}
+
+.email-input, .pass-input {
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+.submit-input {
+    background-color: #47746c;
+    border: 1px solid black;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+}

@@ -1,7 +1,7 @@
 #navbar{
     width: 100%;
     height: 10%;
-    background-color: greenyellow;
+    background-color: #84DCCF;
 }
 
 .navbar_elements{
@@ -22,12 +22,10 @@
 }
 
 .navbar_elements a:hover{
-    background-color: blue;
-    color: black;
+    background-color: #47746c;
 }
 
 .navbar_elements a.active{
-    background-color: green;
     color: white;
 }
 
@@ -35,8 +33,7 @@
     
 }
 
-#navbar_button{
-    background-color: #4CAF50; /* Green */
+#navbar_button{ /* Green */
     border: none;
     color: white;
     padding: 10px 15px;
