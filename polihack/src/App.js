@@ -2,12 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/navbar/navbar.js';
 import LoginForm from "./components/LoginForm/LoginForm.js";
+import CompanyBox from "./components/company/company.js"
+
+const imgPath = "/pizza.jpg"
 
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-      <LoginForm />
+      <CompanyBox name={"Burger Grill"} rating={"6/9"} imgPath={imgPath} />
     </div>
   );
 }

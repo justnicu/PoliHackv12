@@ -1,0 +1,30 @@
+.rounded-box:hover {
+  border: 10px solid #84dccf36;
+}
+
+
+.rounded-box {
+  display: grid;
+  grid-template-areas: "img img"
+  "name rating";
+  grid-template-rows: 8fr 2fr;
+  border-radius: 20px;
+  width: 400px;
+  height: 300px;
+  border: 10px solid #84dccf00;
+}
+
+img {
+  border-radius: 10px;
+  grid-area: img;
+}
+
+.company-name {
+  font-size: x-large;
+  grid-area: name;
+}
+
+.company-rating {
+  font-size: x-large;
+  grid-area: rating;
+}
