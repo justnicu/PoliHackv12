@@ -1,0 +1,25 @@
+.rounded-city-box:hover {
+    border: 10px solid #84dccf36;
+}
+  
+  
+.rounded-city-box {
+    display: grid;
+    grid-template-areas: "img"
+    "name";
+    grid-template-rows: 8fr 2fr;
+    border-radius: 20px;
+    width: 400px;
+    height: 300px;
+    border: 10px solid #84dccf00;
+}
+
+img {
+    grid-area: img;
+    border-radius: 10px;
+}
+  
+.city-name {
+    grid-area: name;
+    font-size: x-large;
+}
