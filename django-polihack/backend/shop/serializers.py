@@ -19,8 +19,3 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = ('name', 'description', 'quantity', 'company')
-
-class CreateCompanySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Company
-        fields = ('name', 'address', 'city', 'company_img')
