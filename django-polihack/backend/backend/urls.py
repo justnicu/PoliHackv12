@@ -26,13 +26,15 @@ routerCompany = routers.DefaultRouter()
 routerCompany.register(r'companies', views.CompanyView, 'shop')
 routerProduct = routers.DefaultRouter()
 routerProduct.register(r'products', views.ProductView, 'shop')
+routerCreateCompany = routers.DefaultRouter()
+routerCreateCompany.register(r'createCompany', views.CreateCompanyView, 'shop')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(routerCity.urls)),
     path('api/', include(routerCompany.urls)),
     path('api/', include(routerProduct.urls)),
-    path('rest-auth/', include('rest_auth.urls')),
+    path('api/', include(routerCreateCompany.urls))
 ]
 
 if settings.DEBUG:
