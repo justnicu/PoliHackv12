@@ -44,7 +44,7 @@ ReactDOM.render(
               <Route path={"products/" + city.name} element={<CityPage id={city.id} name={city.name} />}></Route>
             )}
             {companiesList.map((company) => 
-              <Route path={"companies/" + company.name} element={<CompanyProductPage id={company.id} name={company.name} img={company.company_img} />}></Route>
+              <Route path={"companies/" + company.name.split(' ').join('-')} element={<CompanyProductPage id={company.id} name={company.name} img={company.company_img} />}></Route>
             )}
           <Route path="login" element={<LoginPage/>}>
           </Route>

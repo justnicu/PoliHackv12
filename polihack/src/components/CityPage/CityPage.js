@@ -21,8 +21,8 @@ export default function CityPage({id, name}) {
         </div>
         <div className="companies">
             {companiesList.map((company, idx) => 
-            <Link to={"/companies/" + company.name} key={idx}>
-                <CompanyBox name={company.name} rating={1} imgPath={company.company_img} />
+            <Link to={"/companies/" + company.name.split(' ').join('-')} key={idx}>
+                <CompanyBox name={company.name.split(' ').join('-')} rating={1} imgPath={company.company_img} />
             </Link>
             )}
             <Outlet/>
