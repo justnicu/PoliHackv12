@@ -23,6 +23,7 @@ class Product(models.Model):
     name = models.CharField(max_length=20)
     description = models.TextField()
     quantity = models.IntegerField()
+    price = models.IntegerField()
     company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name="productOf")
 
     def _str_(self):

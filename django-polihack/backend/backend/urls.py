@@ -26,12 +26,18 @@ routerCompany = routers.DefaultRouter()
 routerCompany.register(r'companies', views.CompanyView, 'shop')
 routerProduct = routers.DefaultRouter()
 routerProduct.register(r'products', views.ProductView, 'shop')
+routerRegister = routers.DefaultRouter()
+routerRegister.register(r'register', views.RegisterView, 'shop')
+routerLogin = routers.DefaultRouter()
+routerLogin.register(r'login', views.LoginView, 'shop')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(routerCity.urls)),
     path('api/', include(routerCompany.urls)),
     path('api/', include(routerProduct.urls)),
+    path('api/auth/', include(routerRegister.urls)),
+    path('api/auth/', include(routerLogin.urls)),
 ]
 
 if settings.DEBUG:
