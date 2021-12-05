@@ -1,0 +1,76 @@
+.company-product-page {
+    display: grid;
+    grid-template-areas: "img sidebar"
+    "title sidebar"
+    "products sidebar";
+    grid-template-rows: 30vh 10vh auto;
+    grid-template-columns: 7fr 3fr;
+    gap: 0;
+
+}
+
+.company-product-sidebar {
+    grid-area: sidebar;
+    width: 30vw;
+    border-left: 1px solid black;
+    min-height: 100vh;
+}
+
+.company-product-page-img {
+    grid-area: img;
+    width: 70vw;;
+    height: 30vh;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.company-product-page-name {
+    grid-area: title;
+    font-weight: bold;
+    font-size: 3vw;
+    margin-top: 5vh;
+
+}
+
+.company-products {
+    grid-area: products;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    margin-top: 10vh;
+    justify-content: center;
+
+}
+
+.product-item {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 2vw;
+    width: 25vw;
+    justify-items: center;
+    height: auto;
+    display: grid;
+    grid-template-areas: "name name"
+    "price quantity";
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5vh 0;
+    padding: 20px;
+}
+
+.product-name {
+    grid-area: name;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 10%;
+
+}
+
+.product-price {
+    grid-area: price;
+
+}
+
+.product-quantity {
+    grid-area: quantity;
+
+}

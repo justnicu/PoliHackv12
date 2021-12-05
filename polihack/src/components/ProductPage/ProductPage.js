@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { BrowserRouter, Route, Routes, Outlet } from 'react-router-dom';
 import CityPage from "../CityPage/CityPage";
 
-export default function ProductPage({cityId}) {
+export default function ProductPage() {
     const [citiesList, setCitiesList] = useState([]);
     useEffect(() => {
         fetch('http://localhost:8000/api/cities/')
@@ -16,7 +16,7 @@ export default function ProductPage({cityId}) {
 
     return (
         <div className="products-page">
-            <p className="product-page-text">Alege-ti orasul.</p>
+            <p className="product-page-text">Alege-ți orașul.</p>
             <div className="city-list">
             {citiesList.map((city, idx) => 
                 <div key={idx}>

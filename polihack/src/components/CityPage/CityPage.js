@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
 import "./CityPage.css"
 import CompanyBox from "../company/company.js";
-import {Outlet} from "react-router-dom";
+import {Link, Outlet} from"react-router-dom"
 
 
-export default function CityPage({id}) {
+export default function CityPage({id, name}) {
     const [companiesList, setCompaniesList] = useState([]);
     
     useEffect(()=> {
@@ -16,9 +16,16 @@ export default function CityPage({id}) {
     }, [])
 
     return <div className="city-page">
-        {companiesList.map((company, idx) => 
-            <CompanyBox name={company.name} rating={1} imgPath={company.company_img} key={idx} />
-        )}
-        <Outlet/>
+        <div className="city-page-header-div">
+            <h4 className="city-page-header">{"Felurile tale preferate de mâncare la un preț accesibil, în orașul "}<strong> {name} </strong></h4>
+        </div>
+        <div className="companies">
+            {companiesList.map((company, idx) => 
+            <Link to={"/companies/" + company.name} key={idx}>
+                <CompanyBox name={company.name} rating={1} imgPath={company.company_img} />
+            </Link>
+            )}
+            <Outlet/>
+        </div>
     </div>
 }

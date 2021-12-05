@@ -20,11 +20,18 @@ nav {
     gap: 10px;
 }
 
+
 .navbar-elements a {
     text-decoration: none;
     color: black;
     padding: 10px;
     border-radius: 5px;
+}
+
+.logo-div img {
+    width: 15vh;
+    height: 15vh;
+    margin-right: 10vw;
 }
 
 .navbar-elements a:hover, a.nav-element-active {

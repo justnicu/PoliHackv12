@@ -1,6 +1,30 @@
 .city-page {
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.companies {
+    margin-left: 10vw;
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+}
+
+.city-page-header-div {
+    margin-top: 7vh;
+    margin-bottom: 10vh;
+    margin-left: 10vw;
+    display: flex;
+    width: 60vw;
+}
+
+.city-page-header {
+    text-align: left;
+    line-height: 8vh;
+    font-weight: lighter;
+    font-size: 3vw;
 }

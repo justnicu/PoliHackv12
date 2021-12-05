@@ -1,4 +1,4 @@
-.login-form {
+.register-form {
     display: flex;
     flex-direction: column;
     width: 150px;
@@ -7,7 +7,7 @@
     padding-left: 40%;
 }
 
-.email-input, .pass-input, .name-input, .address-input {
+.email-input, .pass-input, .first-name-input, .last-name-input, .username-input {
     border: none;
     border-bottom: 1px solid #000000;
 }

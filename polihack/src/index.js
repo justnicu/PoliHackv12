@@ -9,29 +9,45 @@ import ProductPage from './components/ProductPage/ProductPage';
 import LoginPage from './components/LoginPage/LoginPage';
 import RegisterPage from './components/RegisterPage/RegisterPage';
 import CityPage from './components/CityPage/CityPage';
+import CompanyProductPage from "./components/CompanyProductPage/CompanyProductPage";
 
 let citiesList;
 fetch('http://localhost:8000/api/cities/')
 .then(response => response.json())
 .then(data => {
     citiesList = [...data]
+    getCompaniesList();
+  })
+.catch(err => console.log(err))
+
+let companiesList;
+
+const getCompaniesList = () => {
+  fetch('http://localhost:8000/api/companies/')
+.then(response => response.json())
+.then(data => {
+    companiesList = [...data]
     render();
   })
 .catch(err => console.log(err))
+}
 
 const render = () => {
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-
         <Route path="/" element={<App/>}>
-          <Route path="home" element={<HomePage/>}></Route>
+          <Route path="/" element={<HomePage/>}></Route>
           <Route path="products" exact element={<ProductPage/>}></Route>
           {citiesList.map((city) => 
-              <Route path={"products/" + city.name} element={<CityPage id={city.id} />}></Route>
+              <Route path={"products/" + city.name} element={<CityPage id={city.id} name={city.name} />}></Route>
             )}
-          <Route path="login" element={<LoginPage/>}></Route>
+            {companiesList.map((company) => 
+              <Route path={"companies/" + company.name} element={<CompanyProductPage id={company.id} name={company.name} img={company.company_img} />}></Route>
+            )}
+          <Route path="login" element={<LoginPage/>}>
+          </Route>
           <Route path="register" element={<RegisterPage/>}></Route>
         </Route>
 
