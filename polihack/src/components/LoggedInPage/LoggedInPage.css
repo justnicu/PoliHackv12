@@ -1,0 +1,21 @@
+.greeting-header {
+    font-size: 50px;
+    margin-top: 10vh;
+}
+
+.view-listings {
+    outline: none;
+    text-decoration: none;
+    background: none;
+    border-radius: 2px;
+    border: 1px solid black;
+    padding: 10px;
+    transition: 0.1s ease-in-out;
+    margin-top: 10vh;
+}
+
+.view-listings:hover {
+    background-color: #416d66;
+    color: white;
+    cursor: pointer;
+}

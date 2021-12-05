@@ -8,6 +8,7 @@ import CityBox from "./components/city/city.js"
 import HomePage from './components/HomePage/HomePage';
 import LoginPage from './components/LoginPage/LoginPage';
 import ProductPage from './components/ProductPage/ProductPage';
+import LoggedInPage from './components/LoggedInPage/LoggedInPage';
 import axios from 'axios';
 
 
@@ -28,7 +29,7 @@ function App() {
     <div className="App">
       <NavBar/>
       <Outlet/>
-      
+      {/* <LoggedInPage name="vlad" email="vlad@vlad" /> */}
     </div>
   );
 }

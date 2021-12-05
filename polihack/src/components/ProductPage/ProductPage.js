@@ -16,6 +16,8 @@ export default function ProductPage({cityId}) {
 
     return (
         <div className="products-page">
+            <p className="product-page-text">Alege-ti orasul.</p>
+            <div className="city-list">
             {citiesList.map((city, idx) => 
                 <div key={idx}>
             <Link to={city.name}>
@@ -24,5 +26,6 @@ export default function ProductPage({cityId}) {
             <Outlet/>
             </div>
             )}
+            </div>
         </div>);
 }
