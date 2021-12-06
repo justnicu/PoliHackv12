@@ -6,15 +6,33 @@ nav {
 }
 
 .navbar-elements {
-    width: 100vw;
+    position: relative;
+    left: 5vh;
+    width: 90vw;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    display: grid;
+    grid-template-areas: "a b . c";
+    grid-template-columns: 1fr 1fr 3fr 1fr;
     font-family: sans-serif;
+    justify-items: center;
+    align-items: center;
+}
+
+.logo-div {
+    height: 10vh;
+    grid-area: a;
+}
+
+.navbar-left {
+    grid-area: b;
+}
+
+.navbar-right {
+    grid-area: c;
 }
 
 .navbar-right, .navbar-left {
+    height: 10vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -23,7 +41,6 @@ nav {
 
 
 .navbar-elements a {
-    text-decoration: none;
     color: black;
     padding: 10px;
     border-radius: 5px;
@@ -32,13 +49,38 @@ nav {
 .logo-div img {
     width: 15vh;
     height: 15vh;
-    margin-right: 10vw;
+    position: relative;
+    top: -2.5vh;
 }
 
-.navbar-elements a:hover, a.nav-element-active {
+.nav-button, .nav-element-active {
+    position: relative;
+}
+
+.nav-button:after {
+    content: "";
+    background: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-button:hover:after {
     cursor: pointer;
-    background-color: #416d66;
-    color: white;
+    height: 2px;
+    width: 100%;
 }
 
+.nav-element-active:after {
+    content: "";
+    background: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+}
 

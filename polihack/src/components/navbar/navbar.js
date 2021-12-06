@@ -12,15 +12,16 @@ const NavBar=({loggedIn, setLoggedIn}) => {
     return (
         <nav>
             <div className="navbar-elements">
+                <div className="logo-div">
+                    <img src={logo}></img>
+                </div>
                 <div className="navbar-left">
-                    <div className="logo-div"><img src={logo}></img></div>
-
-                    <Link to = "/" onClick={()=> setActiveButton(0)} className={activeButton === 0 ? "nav-element-active" : ""}>Home</Link>
-                    <Link to="/products" onClick={()=> setActiveButton(1)} className={activeButton === 1 ? "nav-element-active" : ""}>Products</Link>
+                    <Link to = "/" onClick={()=> setActiveButton(0)} className={(activeButton === 0 ? "nav-element-active" : "nav-button")}>Home</Link>
+                    <Link to="/products" onClick={()=> setActiveButton(1)} className={activeButton === 1 ? "nav-element-active" : "nav-button"}>Products</Link>
                 </div>
                 <div className="navbar-right">
-                    <Link to="/login" onClick={()=> setActiveButton(2)} className={(activeButton === 2 ? "nav-element-active" : "") + (loggedIn ? " hidden " : "")}>Login</Link>
-                    <Link to="/register" onClick={()=> setActiveButton(3)} className={(activeButton === 3 ? "nav-element-active" : "") + (loggedIn ? " hidden " : "")}>Register</Link>
+                    <Link to="/login" onClick={()=> setActiveButton(2)} className={(activeButton === 2 ? "nav-element-active" : "nav-button") + (loggedIn ? " hidden " : "")}>Login</Link>
+                    <Link to="/register" onClick={()=> setActiveButton(3)} className={(activeButton === 3 ? "nav-element-active" : "nav-button") + (loggedIn ? " hidden " : "")}>Register</Link>
                 </div>
             </div>
             

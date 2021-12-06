@@ -19,12 +19,12 @@ export default function ProductPage() {
             <p className="product-page-text">Alege-ți orașul.</p>
             <div className="city-list">
             {citiesList.map((city, idx) => 
-                <div key={idx}>
-            <Link to={city.name}>
+            <>
+            <Link className="city-link" to={city.name}>
                 <CityBox name={city.name} id={city.id} imgPath={city.city_img} />
             </Link>
             <Outlet/>
-            </div>
+            </>
             )}
             </div>
         </div>);
